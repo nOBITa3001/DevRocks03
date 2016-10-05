@@ -1,16 +1,12 @@
 namespace AddressBook.Controllers
 {
-    public class HomeController
-    {
-        public string Index()
-        {
-            //throw new System.Exception("TEST");
-            return "Hello World!";
-        }
+    using Microsoft.AspNetCore.Mvc;
 
-        public string Error()
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
         {
-            return "An error occurs.";
+            return View();
         }
     }
 }
