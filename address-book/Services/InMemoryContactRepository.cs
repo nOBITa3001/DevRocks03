@@ -2,6 +2,7 @@ namespace AddressBook.Services
 {
     using Models;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class InMemoryContactRepository : IContactRepository
     {
@@ -15,6 +16,17 @@ namespace AddressBook.Services
         public IEnumerable<Contact> GetAll()
         {
             return this.contacts;
+        }
+
+        public void Add(Contact contact)
+        {
+            contact.ID = this.GenerateNewID();
+            this.contacts.Add(contact);
+        }
+
+        private int GenerateNewID()
+        {
+            return (this.contacts.Max(x => x.ID) + 1);
         }
     }
 }

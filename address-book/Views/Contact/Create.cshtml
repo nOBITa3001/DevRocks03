@@ -1,0 +1,30 @@
+@model Contact
+@{
+    ViewData["Title"] = "Create Contact";
+}
+
+<form asp-action="Create">
+    <div asp-validation-summary="All"></div>
+    
+    <label asp-for="FirstName"></label>
+    <input type="text" asp-for="FirstName">
+    <span asp-validation-for="FirstName"></span>
+    <br>
+
+    <label asp-for="LastName"></label>
+    <input type="text" asp-for="LastName">
+    <span asp-validation-for="LastName"></span>
+    <br>
+
+    <label asp-for="PhoneNumber"></label>
+    <input type="text" asp-for="PhoneNumber">
+    <span asp-validation-for="PhoneNumber"></span>
+    <br>
+    
+    <label asp-for="EmailAddress"></label>
+    <input type="text" asp-for="EmailAddress">
+    <span asp-validation-for="EmailAddress"></span>
+    <br>
+
+    <input type="submit" value="Create">
+</form>
