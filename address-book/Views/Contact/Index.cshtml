@@ -1,0 +1,11 @@
+@model IEnumerable<Contact>
+@{
+    ViewData["Title"] = "Contact List";
+}
+
+@foreach(var contact in Model)
+{
+    <ul>
+        <li>@contact.FirstName @contact.LastName</li>
+    </ul>
+}
