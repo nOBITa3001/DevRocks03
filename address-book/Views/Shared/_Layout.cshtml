@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>@ViewData["Title"]</title>
+    <environment names="Development">
+         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css">
+    </environment>
+    <environment names="Staging, Production">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    </environment>
 </head>
 <body>
-    @RenderBody()
+    <div class="navbar navbar-default">
+        <div class="container">
+            <a asp-controller="Home" asp-action="Index" class="navbar-brand">
+                Address Book Application
+            </a>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr>
+        <footer>
+            <p>
+                Copyright &copy; 2016 - Address Book Application
+            </p>
+        </footer>
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+    </environment>
+    <environment names="Staging, Production">
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    </environment>
 </body>
 </html>

@@ -3,28 +3,48 @@
     ViewData["Title"] = "Create Contact";
 }
 
+<a asp-action="Index" class="btn btn-default pull-right">
+    Back to Contact List
+</a>
+<h2>Create New Contact</h2>
+<hr>
+
 <form asp-action="Create">
-    <div asp-validation-summary="All"></div>
-    
-    <label asp-for="FirstName"></label>
-    <input type="text" asp-for="FirstName">
-    <span asp-validation-for="FirstName"></span>
-    <br>
+    <div class="form-horizontal">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="FirstName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="text" asp-for="FirstName">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="text" asp-for="LastName">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="text" asp-for="PhoneNumber">
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmailAddress" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="text" asp-for="EmailAddress">
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+        </div>
 
-    <label asp-for="LastName"></label>
-    <input type="text" asp-for="LastName">
-    <span asp-validation-for="LastName"></span>
-    <br>
-
-    <label asp-for="PhoneNumber"></label>
-    <input type="text" asp-for="PhoneNumber">
-    <span asp-validation-for="PhoneNumber"></span>
-    <br>
-    
-    <label asp-for="EmailAddress"></label>
-    <input type="text" asp-for="EmailAddress">
-    <span asp-validation-for="EmailAddress"></span>
-    <br>
-
-    <input type="submit" value="Create">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default">
+            </div>
+        </div>
+    </div>
 </form>

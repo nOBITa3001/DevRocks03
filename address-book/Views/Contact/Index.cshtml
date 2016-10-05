@@ -3,9 +3,31 @@
     ViewData["Title"] = "Contact List";
 }
 
-@foreach(var contact in Model)
-{
-    <ul>
-        <li>@contact.FirstName @contact.LastName</li>
-    </ul>
-}
+<a asp-action="Create" class="btn btn-primary pull-right">Create New Contact</a>
+<h1>Contacts</h1>
+<hr>
+
+<div class="row">
+    <div class="col-md-12">
+        @foreach(var contact in Model)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>@contact.FirstName @contact.LastName</strong>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <label asp-for="@contact.PhoneNumber"></label>
+                            : @contact.PhoneNumber
+                        </li>
+                        <li class="list-group-item">
+                            <label asp-for="@contact.EmailAddress"></label>
+                            : @contact.EmailAddress
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+</div>
