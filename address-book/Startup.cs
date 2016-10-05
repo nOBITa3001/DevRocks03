@@ -3,12 +3,15 @@ namespace AddressBook
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.DependencyInjection;
+    using Services;
 
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddSingleton<IContactRepository, InMemoryContactRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
