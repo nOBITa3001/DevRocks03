@@ -11,23 +11,7 @@
     <div class="col-md-12">
         @foreach(var contact in Model)
         {
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <strong>@contact.FirstName @contact.LastName</strong>
-                </div>
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <label asp-for="@contact.PhoneNumber"></label>
-                            : @contact.PhoneNumber
-                        </li>
-                        <li class="list-group-item">
-                            <label asp-for="@contact.EmailAddress"></label>
-                            : @contact.EmailAddress
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            @await Component.InvokeAsync("Contact", new { contact = @contact })
         }
     </div>
 </div>
