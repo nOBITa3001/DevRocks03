@@ -1,0 +1,19 @@
+@model Contact
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>@Model.FirstName @Model.LastName</strong>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <label asp-for="@Model.PhoneNumber"></label>
+                : @Model.PhoneNumber
+            </li>
+            <li class="list-group-item">
+                <label asp-for="@Model.EmailAddress"></label>
+                : @Model.EmailAddress
+            </li>
+        </ul>
+    </div>
+</div>

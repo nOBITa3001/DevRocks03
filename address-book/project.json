@@ -11,6 +11,12 @@
     , "Microsoft.AspNetCore.Mvc": "1.0.1"
     , "Microsoft.AspNetCore.Diagnostics" : "1.0.0"
   },
+  "publishOptions": {
+    "include": [
+      "wwwroot"
+      , "Views"
+      ]
+  },
   "frameworks": {
     "netcoreapp1.0": {
       "dependencies": {

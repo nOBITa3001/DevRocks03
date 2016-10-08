@@ -1,0 +1,17 @@
+@model IEnumerable<Contact>
+@{
+    ViewData["Title"] = "Contact List";
+}
+
+<a asp-action="Create" class="btn btn-primary pull-right">Create New Contact</a>
+<h1>Contacts</h1>
+<hr>
+
+<div class="row">
+    <div class="col-md-12">
+        @foreach(var contact in Model)
+        {
+            @await Component.InvokeAsync("Contact", new { contact = @contact })
+        }
+    </div>
+</div>
